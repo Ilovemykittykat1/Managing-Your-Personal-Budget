@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Budget Planner</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Navigation Styling */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ff69b4;
+      padding: 10px 20px;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      gap: 8px;
+    }
+
+    .logo svg {
+      width: 24px;
+      height: 24px;
+      fill: #add8e6;
+    }
+
+    .nav-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .nav-center ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .nav-center ul li {
+      margin: 0 15px;
+    }
+
+    .nav-center ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .nav-center ul li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body style="background-image: url('images/background.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
+
+  <!-- Navigation Menu -->
+  <nav>
+    <!-- Logo on the left -->
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M528 448H112a16 16 0 0 1-16-16V235.7L149.5 273a16 16 0 0 0 22.6 0l64-64 64 96a16 16 0 0 0 26.7 0l64-96 64 64a16 16 0 0 0 22.6 0L544 235.7V432a16 16 0 0 1-16 16zM96 144a48 48 0 1 1 48-48 48 48 0 0 1-48 48zm448 0a48 48 0 1 1 48-48 48 48 0 0 1-48 48zm-224 0a48 48 0 1 1 48-48 48 48 0 0 1-48 48z"/></svg>
+      <span>Code Queens</span>
+    </div>
+
+    <!-- Centered navigation -->
+    <div class="nav-center">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tracker.html">Budget Planner</a></li>
+        <li><a href="plans.html">Plans & Pricing</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Home Page Section -->
+  <div id="homepage">
+    <h1>Welcome to Sleek & Sassy Style</h1>
+    <img src="images/icon.png" alt="My Budget Planner" id="homepage-img">
+
+    <h2>Managing Your Personal Budget</h2>
+    <p id="blurb">
+      Take control of your finances with our easy-to-use budget planner!  
+      Track your income, manage expenses, and plan for the future—all in one place.  
+      Start organizing your finances today and make smarter financial decisions!
+    </p>
+    <a href="tracker.html" class="btn">Get Started</a>
+  </div>
+
+</body>
+</html>

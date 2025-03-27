@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Sleek & Sassy</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ff69b4;
+      padding: 10px 20px;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      gap: 8px;
+    }
+
+    .logo svg {
+      width: 24px;
+      height: 24px;
+      fill: #add8e6;
+    }
+
+    .nav-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .nav-center ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .nav-center ul li {
+      margin: 0 15px;
+    }
+
+    .nav-center ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .nav-center ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .about-container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .about-container h1 {
+      color: #d63384;
+      margin-bottom: 20px;
+    }
+
+    .about-container p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .team {
+      margin-top: 30px;
+    }
+
+    .team h2 {
+      color: #c71585;
+      margin-bottom: 10px;
+    }
+
+    .team ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .team li {
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body style="background-image: url('images/background.png'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
+
+  <!-- Navigation Menu -->
+  <nav>
+    <!-- Logo on the left -->
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M528 448H112a16 16 0 0 1-16-16V235.7L149.5 273a16 16 0 0 0 22.6 0l64-64 64 96a16 16 0 0 0 26.7 0l64-96 64 64a16 16 0 0 0 22.6 0L544 235.7V432a16 16 0 0 1-16 16zM96 144a48 48 0 1 1 48-48 48 48 0 0 1-48 48zm448 0a48 48 0 1 1 48-48 48 48 0 0 1-48 48zm-224 0a48 48 0 1 1 48-48 48 48 0 0 1-48 48z"/></svg>
+      <span>Code Queens</span>
+    </div>
+
+    <!-- Centered navigation -->
+    <div class="nav-center">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tracker.html">Budget Planner</a></li>
+        <li><a href="plans.html">Plans & Pricing</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="about-container">
+    <h1>About Sleek & Sassy</h1>
+    <p>
+      Sleek & Sassy was built with one goal: to make managing money feel empowering, effortless, and a little bit fabulous.
+      Whether you're tracking your spending or planning for your future, our tools are designed to fit your lifestyle—not stress you out.
+    </p>
+    <p>
+      We believe budgeting is more than numbers—it's about confidence, clarity, and control. That's why we made this platform fun, functional, and fierce.
+    </p>
+
+    <div class="team">
+      <h2>Meet the Code Queens 👑</h2>
+      <ul>
+        <li>Katherine McNeil</li>
+        <li>Amelia MacDonald</li>
+        <li>Esraa Abdelmoein</li>
+        <li>Mariam Arshad</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
