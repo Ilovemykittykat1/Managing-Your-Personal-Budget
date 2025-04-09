@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - Sleek & Sassy</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-image: url('images/background.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ff69b4;
+      padding: 10px 20px;
+      position: relative;
+      box-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      gap: 8px;
+      text-shadow: 0 0 8px #ffffff;
+    }
+
+    .logo svg {
+      width: 24px;
+      height: 24px;
+      fill: #add8e6;
+    }
+
+    .nav-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .nav-center ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .nav-center ul li {
+      margin: 0 15px;
+    }
+
+    .nav-center ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      text-shadow: 0 0 5px #fff;
+      transition: 0.3s ease;
+    }
+
+    .nav-center ul li a:hover {
+      color: #ffffcc;
+      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 40px;
+      font-weight: bold;
+      color: #e6007e;
+      margin-top: 40px;
+      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493, 0 0 30px #ff1493;
+      animation: popIn 1s ease-in-out;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 12px;
+      border: 4px solid #ff1493;
+      box-shadow:
+        0 0 20px rgba(255, 105, 180, 0.3),
+        0 0 40px rgba(255, 182, 193, 0.2),
+        0 0 60px rgba(219, 112, 147, 0.2);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #d63384;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      box-shadow: 0 0 5px #fcb0d2 inset;
+    }
+
+    button {
+      background-color: #ff69b4;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff69b4, 0 0 15px #ff1493;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #d63384;
+      box-shadow: 0 0 20px #ff69b4, 0 0 25px #ff1493;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .bunny-hop {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      animation: hopInPlace 1.2s ease-in-out infinite;
+    }
+
+    .bunny-hop img {
+      width: 120px;
+      height: auto;
+    }
+
+    @keyframes hopInPlace {
+      0% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, -20px); }
+      100% { transform: translate(-50%, 0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Menu -->
+  <nav>
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+        <path d="M528 448H112a16 16 0 0 1-16-16V235.7L149.5 273a16 16 0 0 0 22.6 0l64-64 64 96a16 16 0 0 0 26.7 0l64-96 64 64a16 16 0 0 0 22.6 0L544 235.7V432a16 16 0 0 1-16 16zM96 144a48 48 0 1 1 48-48 48 48 0 0 1-48 48zm448 0a48 48 0 1 1 48-48 48 48 0 0 1-48 48zm-224 0a48 48 0 1 1 48-48 48 48 0 0 1-48 48z"/>
+      </svg>
+      <span>Code Queens</span>
+    </div>
+
+    <div class="nav-center">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        
+        <li><a href="plans.html">Plans & Pricing</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="draw.html" style="color:#ffffcc;">🎁 Easter Draw</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <h1>Contact Sleek & Sassy</h1>
+
+  <form action="https://formspree.io/f/xqapkayz" method="POST">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Your Email:</label>
+    <input type="email" id="email" name="_replyto" required>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="6" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <!-- Bunny Hopping in Place -->
+  <div class="bunny-hop">
+    <img src="images/bunny.png" alt="Hopping Bunny">
+  </div>
+
+</body>
+</html>

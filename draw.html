@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎁 Easter Draw - Sleek & Sassy</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+      color: #d63384;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ff69b4;
+      padding: 10px 20px;
+      box-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493;
+    }
+
+    .logo {
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      text-shadow: 0 0 8px #ffffff;
+    }
+
+    .nav-center {
+      margin: 0 auto;
+    }
+
+    .nav-center ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-center ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      text-shadow: 0 0 5px #fff;
+      transition: 0.3s ease;
+    }
+
+    .nav-center ul li a:hover {
+      color: #ffffcc;
+      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+    }
+
+    .container {
+      text-align: center;
+      padding: 80px 20px;
+      max-width: 800px;
+      margin: 60px auto;
+      background: white;
+      border-radius: 20px;
+      border: 6px solid #ff1493;
+      box-shadow: 0 0 25px #ff69b4, 0 0 45px #ff1493;
+    }
+
+    h1 {
+      font-size: 40px;
+      color: #e6007e;
+      text-shadow: 0 0 10px #ff69b4;
+      margin-bottom: 40px;
+    }
+
+    .egg {
+      width: 300px;
+      max-width: 90%;
+      transition: transform 0.3s ease;
+    }
+
+    .egg:hover {
+      transform: scale(1.05);
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 16px 32px;
+      background-color: #ff69b4;
+      color: white;
+      font-size: 20px;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ff69b4, 0 0 30px #ff1493;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #d63384;
+      transform: scale(1.07);
+    }
+
+    #result {
+      margin-top: 40px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #c71585;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Menu -->
+  <nav>
+    <div class="logo">Code Queens</div>
+    <div class="nav-center">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="plans.html">Plans</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="draw.html" style="color:#ffffcc;">🎁 Easter Draw</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Draw Content -->
+  <div class="container">
+    <h1>Click the Egg for a Surprise!</h1>
+    <img src="images/easter-egg.png" alt="Easter Egg" class="egg">
+    <br>
+    <button onclick="drawWinner()">Try Your Luck</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function drawWinner() {
+      const result = document.getElementById('result');
+      result.innerHTML = '';
+
+      const isWinner = Math.random() < 0.4; // 40% chance
+
+      if (isWinner) {
+        result.innerHTML = "🎉 You Win one monthe free of the Code Queen's Budget Tracker! Redirecting to your special tracker...";
+        setTimeout(() => {
+          window.location.href = "tracker.html"; // <-- Directly to your budget tracker
+        }, 3000);
+      } else {
+        result.innerHTML = "🐣 Sorry, try again! The bunny says not yet...";
+      }
+    }
+  </script>
+</body>
+</html>

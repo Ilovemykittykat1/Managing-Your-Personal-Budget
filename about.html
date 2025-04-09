@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Sleek & Sassy</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #d63384;
+      background-image: url('images/background.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ff69b4;
+      padding: 10px 20px;
+      width: 100%;
+      box-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      gap: 8px;
+      text-shadow: 0 0 8px #ffffff;
+    }
+
+    .logo svg {
+      width: 24px;
+      height: 24px;
+      fill: #add8e6;
+    }
+
+    .nav-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .nav-center ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .nav-center ul li {
+      margin: 0 15px;
+    }
+
+    .nav-center ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      text-shadow: 0 0 5px #fff;
+      transition: 0.3s ease;
+    }
+
+    .nav-center ul li a:hover {
+      color: #ffffcc;
+      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+    }
+
+    .heading-wrapper {
+      text-align: center;
+      margin: 60px 0 20px;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+      color: #e6007e;
+      text-align: center;
+      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493, 0 0 30px #ff1493;
+      animation: popIn 1s ease-in-out;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .about-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 60px;
+      border-radius: 12px;
+      border: 4px solid #ff1493;
+      box-shadow:
+        0 0 20px rgba(255, 105, 180, 0.4),
+        0 0 40px rgba(255, 182, 193, 0.3),
+        0 0 60px rgba(219, 112, 147, 0.2);
+      text-align: center;
+    }
+
+    .about-container h2 {
+      color: #d63384;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .about-container p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .team {
+      margin-top: 40px;
+    }
+
+    .team h3 {
+      color: #c71585;
+      font-size: 24px;
+      margin-bottom: 10px;
+      text-shadow: 0 0 8px #ffa6c9;
+    }
+
+    .team ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .team li {
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #c71585;
+      text-shadow: 0 0 5px #ffb6c1, 0 0 10px #db7093;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+        <path d="M528 448H112a16 16 0 0 1-16-16V235.7L149.5 273a16 16 0 0 0 22.6 0l64-64 64 96a16 16 0 0 0 26.7 0l64-96 64 64a16 16 0 0 0 22.6 0L544 235.7V432a16 16 0 0 1-16 16zM96 144a48 48 0 1 1 48-48 48 48 0 0 1-48 48zm448 0a48 48 0 1 1 48-48 48 48 0 0 1-48 48zm-224 0a48 48 0 1 1 48-48 48 48 0 0 1-48 48z"/>
+      </svg>
+      <span>Code Queens</span>
+    </div>
+    <div class="nav-center">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="plans.html">Plans & Pricing</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="draw.html" style="color:#ffffcc;">🎁 Easter Draw</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="heading-wrapper">
+    <h1>About Sleek & Sassy</h1>
+    <img src="images/crown.png" alt="Crown" style="width: 180px; margin-top: 20px; display: block; margin-left: auto; margin-right: auto;" />
+  </div>
+  
+
+
+  <div class="about-container">
+    <h2>Who We Are</h2>
+    <p>Sleek & Sassy was built with one goal: to make managing money feel empowering, effortless, and a little bit fabulous. Whether you're tracking your spending or planning for your future, our tools are designed to fit your lifestyle—not stress you out.</p>
+    <p>We believe budgeting is more than numbers—it's about confidence, clarity, and control. That's why we made this platform fun, functional, and fierce.</p>
+
+    <div class="team">
+      <h3>Meet the Code Queens </h3>
+      <ul>
+        <li>Katherine McNeil</li>
+        <li>Amelia MacDonald</li>
+        <li>Esraa Abdelmoein</li>
+        <li>Mariam Arshad</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

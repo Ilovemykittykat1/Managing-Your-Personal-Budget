@@ -1,0 +1,214 @@
+/* General Styles */
+body {
+    background: linear-gradient(270deg, #f6d5f7, #fbe9e7, #d0f0fd, #ffe0f0);
+    background-size: 800% 800%;
+    animation: gradientShift 15s ease infinite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Navigation Styling */
+nav {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #ff69b4;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Homepage Styling */
+#homepage {
+    text-align: center;
+    padding: 50px;
+}
+
+#homepage-img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1 {
+    color: #d63384;
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+h2 {
+    color: #c71585;
+    font-size: 28px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background-color: #d63384;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
+}
+
+.btn:hover {
+    background-color: #c71585;
+}
+
+.btn:focus,
+#export-csv:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* Form Styles */
+form {
+    background: white;
+    padding: 20px;
+    max-width: 400px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Summary Section */
+#summary {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #ff69b4;
+    color: white;
+}
+
+/* Button for CSV Download */
+#export-csv {
+    display: block;
+    margin: 20px auto;
+    background-color: #ff1493;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
+}
+
+#export-csv:hover {
+    background-color: #c71585;
+}
+
+/* Responsive Styles for Smaller Screens */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    #homepage {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p, .btn, #export-csv {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    form, #summary, table {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    table th, table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

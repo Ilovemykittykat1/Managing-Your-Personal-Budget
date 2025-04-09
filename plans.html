@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Plans & Pricing - Sleek & Sassy</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #d63384;
+      background-image: url('images/background.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ff69b4;
+      padding: 10px 20px;
+      width: 100%;
+      box-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      gap: 8px;
+      text-shadow: 0 0 8px #ffffff;
+    }
+
+    .logo svg {
+      width: 24px;
+      height: 24px;
+      fill: #add8e6;
+    }
+
+    .nav-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .nav-center ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .nav-center ul li {
+      margin: 0 15px;
+    }
+
+    .nav-center ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      text-shadow: 0 0 5px #fff;
+      transition: 0.3s ease;
+    }
+
+    .nav-center ul li a:hover {
+      color: #ffffcc;
+      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+    }
+
+    .heading-wrapper {
+      text-align: center;
+      margin: 60px 0 20px;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: bold;
+      color: #e6007e;
+      text-align: center;
+      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493, 0 0 30px #ff1493;
+      animation: popIn 1s ease-in-out;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .plans-container {
+      max-width: 1000px;
+      margin: 20px auto 60px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .plan {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      width: 300px;
+      text-align: center;
+      border: 4px solid #ff1493;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      color: #333;
+    }
+
+    .plan:hover {
+      transform: scale(1.05);
+    }
+
+    .plan h3 {
+      color: #d63384;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 28px;
+      font-weight: bold;
+      color: #c71585;
+      margin-bottom: 15px;
+    }
+
+    .features {
+      text-align: left;
+      margin: 15px 0;
+      padding-left: 0;
+    }
+
+    .features li {
+      margin-bottom: 10px;
+      list-style: none;
+    }
+
+    .features li::before {
+      content: "✔ ";
+      color: #d63384;
+    }
+
+    .btn {
+      margin-top: 15px;
+      background-color: #d63384;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background-color: #c71585;
+      box-shadow: 0 0 20px #ff1493, 0 0 30px #ff69b4;
+    }
+
+    #thankYouModal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: none;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      color: #d63384;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    .modal-content h2 {
+      margin-bottom: 10px;
+    }
+
+    .modal-content button {
+      background-color: #ff69b4;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 0 10px #ff69b4;
+      margin-top: 15px;
+    }
+
+    .modal-content button:hover {
+      background-color: #d63384;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+        <path d="M528 448H112a16 16 0 0 1-16-16V235.7L149.5 273a16 16 0 0 0 22.6 0l64-64 64 96a16 16 0 0 0 26.7 0l64-96 64 64a16 16 0 0 0 22.6 0L544 235.7V432a16 16 0 0 1-16 16zM96 144a48 48 0 1 1 48-48 48 48 0 0 1-48 48zm448 0a48 48 0 1 1 48-48 48 48 0 0 1-48 48zm-224 0a48 48 0 1 1 48-48 48 48 0 0 1-48 48z"/>
+      </svg>
+      <span>Code Queens</span>
+    </div>
+    <div class="nav-center">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        
+        <li><a href="plans.html">Plans & Pricing</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="draw.html" style="color:#ffffcc;">🎁 Easter Draw</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="heading-wrapper">
+    <h1>Choose Your Plan</h1>
+  </div>
+
+  <div class="plans-container">
+    <div class="plan">
+      <h3>✨ Basic</h3>
+      <p class="price">$0 / month</p>
+      <ul class="features">
+        <li>Track income & expenses</li>
+        <li>Categorize your spending</li>
+        <li>Live balance updates</li>
+      </ul>
+      <button class="btn">Get Started</button>
+    </div>
+
+    <div class="plan easter">
+      <h3>🐰 Easter Special!</h3>
+      <p class="price">$4.99 <span style="font-size:14px; color:#999;">/ month</span></p>
+      <ul class="features">
+        <li>Everything in Basic</li>
+        <li>Exclusive pastel themes</li>
+        <li>Bunny badge on your profile</li>
+        <li>Spring savings tracker</li>
+      </ul>
+      <button class="btn">Hop In Now</button>
+    </div>
+
+    <div class="plan">
+      <h3>✨ Pro</h3>
+      <p class="price">$9.99 / month</p>
+      <ul class="features">
+        <li>Everything in Basic</li>
+        <li>Downloadable reports</li>
+        <li>Goal tracking</li>
+      </ul>
+      <button class="btn">Upgrade Now</button>
+    </div>
+
+    <div class="plan">
+      <h3>💎 VIP</h3>
+      <p class="price">$14.99 / month</p>
+      <ul class="features">
+        <li>Everything in Pro</li>
+        <li>Priority support</li>
+        <li>Personalized insights</li>
+      </ul>
+      <button class="btn">Join VIP</button>
+    </div>
+  </div>
+
+  <div id="thankYouModal">
+    <div class="modal-content">
+      <h2>Thank You for Choosing Sleek & Sassy!</h2>
+      <p>Your Budget Planner is now activated. 💖</p>
+      <button id="closeModal">Close</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    const buttons = document.querySelectorAll('.btn');
+    const modal = document.getElementById('thankYouModal');
+    const closeBtn = document.getElementById('closeModal');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        modal.style.display = 'flex';
+        confetti({ particleCount: 120, spread: 60, origin: { y: 0.6 } });
+
+        // Redirect to tracker.html after 2 seconds
+        setTimeout(() => {
+          window.location.href = "tracker.html";
+        }, 2000);
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
