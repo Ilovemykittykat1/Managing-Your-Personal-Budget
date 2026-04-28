@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Budget Tracker — Sleek & Sassy</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --neon: #ff69b4;
+  --neon-hot: #ff1493;
+  --neon-light: #ffb6c1;
+  --magenta: #d63384;
+  --fuchsia: #e6007e;
+  --blush: #fff0f5;
+  --dark: #1a0a14;
+  --dark-mid: #2d1525;
+  --text-dark: #2d1525;
+  --text-muted: #8a6578;
+  --electric-blue: #00d4ff;
+  --gold: #ffd700;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Outfit', sans-serif;
+  --glow-sm: 0 0 10px rgba(255,105,180,0.4);
+  --glow-md: 0 0 20px rgba(255,105,180,0.4), 0 0 40px rgba(255,20,147,0.2);
+  --glow-lg: 0 0 20px rgba(255,105,180,0.5), 0 0 50px rgba(255,20,147,0.3), 0 0 80px rgba(255,105,180,0.15);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); -webkit-font-smoothing: antialiased; min-height: 100vh; line-height: 1.6; }
+
+/* NAV */
+.site-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  background: linear-gradient(135deg, #ff69b4, #ff1493, #d63384);
+  padding: 0 28px; height: 60px; position: sticky; top: 0; z-index: 1000;
+  box-shadow: var(--glow-md);
+}
+.nav-brand {
+  font-family: var(--font-display); font-weight: 800; font-size: 1.2rem;
+  color: #fff; text-decoration: none; text-shadow: 0 0 12px rgba(255,255,255,0.6);
+}
+.nav-links { list-style: none; display: flex; gap: 4px; }
+.nav-links a {
+  display: block; padding: 8px 14px; color: rgba(255,255,255,0.85);
+  text-decoration: none; font-weight: 500; font-size: 0.88rem;
+  border-radius: 8px; transition: all 0.25s ease;
+}
+.nav-links a:hover, .nav-links a.active {
+  color: #fff; background: rgba(255,255,255,0.18); text-shadow: 0 0 8px #fff;
+}
+.nav-links .nav-special { background: rgba(0,0,0,0.2); color: var(--gold); font-weight: 700; }
+.nav-links .nav-special:hover { background: rgba(0,0,0,0.35); text-shadow: 0 0 10px var(--gold); }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 6px; flex-direction: column; gap: 4px; }
+.nav-toggle span { display: block; width: 22px; height: 2.5px; background: #fff; border-radius: 2px; }
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; position: absolute; top: 60px; left: 0; right: 0;
+    flex-direction: column; background: linear-gradient(180deg, #d63384, #1a0a14);
+    padding: 16px; gap: 4px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  }
+  .nav-links.open { display: flex; }
+  .nav-toggle { display: flex; }
+}
+
+/* FOOTER */
+.site-footer {
+  text-align: center; padding: 24px 16px; font-size: 0.82rem;
+  color: var(--text-muted); border-top: 1px solid rgba(255,105,180,0.15); margin-top: 60px;
+}
+
+/* BUTTONS */
+.btn-glow {
+  display: inline-block; padding: 14px 32px;
+  background: linear-gradient(135deg, #ff69b4, #ff1493);
+  color: #fff; font-family: var(--font-body); font-weight: 700; font-size: 1rem;
+  border: none; border-radius: 12px; cursor: pointer; text-decoration: none; text-align: center;
+  box-shadow: var(--glow-md); transition: all 0.3s ease;
+}
+.btn-glow:hover { transform: translateY(-2px) scale(1.03); box-shadow: var(--glow-lg); }
+
+.btn-outline-glow {
+  display: inline-block; padding: 12px 28px; background: transparent;
+  color: var(--neon-hot); font-family: var(--font-body); font-weight: 700; font-size: 0.95rem;
+  border: 2px solid var(--neon); border-radius: 12px; cursor: pointer; text-decoration: none;
+  transition: all 0.3s ease; box-shadow: var(--glow-sm);
+}
+.btn-outline-glow:hover { background: var(--neon); color: #fff; box-shadow: var(--glow-md); transform: translateY(-2px); }
+
+</style>
+  <style>
+    body { background: #f8f4f6; color: var(--text-dark); }
+
+    .tracker-page { max-width: 900px; margin: 0 auto; padding: 40px 24px; }
+
+    .tracker-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 36px; }
+    .back-link { color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: color 0.25s ease; }
+    .back-link:hover { color: var(--neon-hot); }
+    .tracker-top h1 { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; color: var(--magenta); text-align: center; flex: 1; }
+
+    .tracker-main { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 36px; }
+
+    .tracker-form-card { background: #fff; border-radius: 20px; padding: 32px 28px; border: 1px solid #f0d4e0; box-shadow: 0 2px 12px rgba(0,0,0,0.03); }
+    .tracker-form-card h3 { font-family: var(--font-display); font-weight: 700; color: var(--magenta); margin-bottom: 20px; font-size: 1.15rem; }
+
+    .fg { margin-bottom: 16px; }
+    .fg label { display: block; font-weight: 600; font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+    .fg input, .fg select {
+      width: 100%; padding: 11px 14px; font-family: var(--font-body); font-size: 0.95rem;
+      border: 2px solid #f0d4e0; border-radius: 10px; background: #fdf6f9; color: var(--text-dark);
+      transition: all 0.25s ease; outline: none; -webkit-appearance: none; appearance: none;
+    }
+    .fg select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%238a6578' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px;
+    }
+    .fg input:focus, .fg select:focus { border-color: var(--neon); box-shadow: 0 0 0 3px rgba(255,105,180,0.1); background: #fff; }
+    .form-submit { width: 100%; margin-top: 6px; }
+
+    .stats-side { display: flex; flex-direction: column; gap: 16px; }
+    .stat-box { border-radius: 16px; padding: 24px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center; transition: transform 0.3s ease; }
+    .stat-box:hover { transform: scale(1.03); }
+    .stat-income { background: linear-gradient(135deg, #d1fae5, #a7f3d0); border: 1px solid #6ee7b7; }
+    .stat-expense { background: linear-gradient(135deg, #fee2e2, #fecaca); border: 1px solid #fca5a5; }
+    .stat-balance { background: linear-gradient(135deg, #fce4f3, #fbcfe8); border: 1px solid var(--neon-light); }
+
+    .stat-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+    .stat-income .stat-label { color: #065f46; }
+    .stat-expense .stat-label { color: #991b1b; }
+    .stat-balance .stat-label { color: var(--magenta); }
+    .stat-value { font-family: var(--font-display); font-size: 2rem; font-weight: 900; }
+    .stat-income .stat-value { color: #059669; }
+    .stat-expense .stat-value { color: #dc2626; }
+    .stat-balance .stat-value { color: var(--neon-hot); }
+
+    .warning-bar { display: none; text-align: center; padding: 12px; background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; border-radius: 12px; font-weight: 600; font-size: 0.9rem; margin-bottom: 24px; }
+
+    .table-section h2 { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; color: var(--magenta); margin-bottom: 12px; }
+    .table-wrap { border-radius: 16px; overflow: hidden; border: 1px solid #f0d4e0; box-shadow: 0 2px 12px rgba(0,0,0,0.03); }
+    table { width: 100%; border-collapse: collapse; background: #fff; }
+    thead th { padding: 14px 18px; text-align: left; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); background: #fdf6f9; border-bottom: 2px solid #f0d4e0; }
+    tbody td { padding: 13px 18px; font-size: 0.92rem; border-bottom: 1px solid #f8ecf0; }
+    tbody tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: #fff5f8; }
+
+    .badge { display: inline-block; padding: 3px 12px; font-size: 0.75rem; font-weight: 700; border-radius: 20px; text-transform: capitalize; }
+    .badge-income { background: #d1fae5; color: #065f46; }
+    .badge-expense { background: #fee2e2; color: #991b1b; }
+
+    .action-btns { display: flex; gap: 12px; justify-content: center; margin-top: 24px; }
+    .btn-sm { padding: 10px 22px; font-family: var(--font-body); font-size: 0.88rem; font-weight: 600; border: none; border-radius: 10px; cursor: pointer; transition: all 0.25s ease; }
+    .btn-csv { background: var(--magenta); color: #fff; box-shadow: var(--glow-sm); }
+    .btn-csv:hover { background: var(--neon-hot); transform: translateY(-2px); box-shadow: var(--glow-md); }
+    .btn-clear { background: #fee2e2; color: #dc2626; border: 1px solid #fecaca; }
+    .btn-clear:hover { background: #fecaca; }
+
+    @media (max-width: 768px) {
+      .tracker-main { grid-template-columns: 1fr; }
+      .tracker-top { flex-direction: column; gap: 12px; }
+      .tracker-top h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="tracker-page">
+    <div class="tracker-top">
+      <a href="index.html" class="back-link">← Home</a>
+      <h1>The Budget Tracker</h1>
+      <div style="width:60px;"></div>
+    </div>
+
+    <div class="tracker-main">
+      <div class="tracker-form-card">
+        <h3>New Transaction</h3>
+        <form id="budget-form">
+          <div class="fg"><label for="type">Type</label><select id="type"><option value="income">Income</option><option value="expense">Expense</option></select></div>
+          <div class="fg"><label for="amount">Amount ($)</label><input type="number" id="amount" placeholder="0.00" step="0.01" min="0.01" required></div>
+          <div class="fg"><label for="category">Category</label><select id="category"></select></div>
+          <div class="fg"><label for="date">Date</label><input type="date" id="date" required></div>
+          <button type="submit" class="btn-glow form-submit">Add Transaction</button>
+        </form>
+      </div>
+
+      <div class="stats-side">
+        <div class="stat-box stat-income"><div class="stat-label">Total Income</div><div class="stat-value" id="total-income">$0.00</div></div>
+        <div class="stat-box stat-expense"><div class="stat-label">Total Expenses</div><div class="stat-value" id="total-expenses">$0.00</div></div>
+        <div class="stat-box stat-balance"><div class="stat-label">Balance</div><div class="stat-value" id="balance">$0.00</div></div>
+      </div>
+    </div>
+
+    <div id="warning" class="warning-bar">⚠ You are spending more than you earn.</div>
+
+    <div class="table-section">
+      <h2>Transaction History</h2>
+      <div class="table-wrap">
+        <table><thead><tr><th>Type</th><th>Amount</th><th>Category</th><th>Date</th></tr></thead><tbody id="transaction-list"></tbody></table>
+      </div>
+    </div>
+
+    <div class="action-btns">
+      <button id="export-csv" class="btn-sm btn-csv">Download CSV</button>
+      <button id="clear-transactions" class="btn-sm btn-clear">Clear All</button>
+    </div>
+  </div>
+
+  <footer class="site-footer">&copy; 2025 Sleek & Sassy. Built as a first-year web development project.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
